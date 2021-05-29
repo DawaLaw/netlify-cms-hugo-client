@@ -1,0 +1,21 @@
+backend:
+  name: github
+  branch: main
+  repo: DawaLaw/netlify-cms-hugo-client
+  base_url: http://localhost:3000
+publish_mode: editorial_workflow
+media_folder: "static/images/"
+public_folder: "/images/"
+collections:
+  - name: "post"
+    label: "Post"
+    folder: "content/post"
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
